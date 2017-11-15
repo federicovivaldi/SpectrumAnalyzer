@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave; // installed with nuget
-using NAudio.CoreAudioApi;
 using System.Numerics;
 
 namespace SpectrumAnalyzer
@@ -111,7 +104,14 @@ namespace SpectrumAnalyzer
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            UpdateAudioGraph();
+            timer1.Enabled = true;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateAudioGraph();
+        }
+
     }
 }

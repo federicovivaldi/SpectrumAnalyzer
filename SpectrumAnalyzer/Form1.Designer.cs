@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.FooterLabel = new System.Windows.Forms.Label();
             this.StartBtn = new System.Windows.Forms.Button();
             this.StopBtn = new System.Windows.Forms.Button();
             this.spectrumPlot = new ScottPlot.ScottPlotUC();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -52,7 +54,7 @@
             this.FooterLabel.Name = "FooterLabel";
             this.FooterLabel.Size = new System.Drawing.Size(224, 13);
             this.FooterLabel.TabIndex = 1;
-            this.FooterLabel.Text = "Topics in Computer Science - Federico Vivaldi";
+            this.FooterLabel.Text = "Topics in Computer Science 2017-2018 - Federico Vivaldi";
             // 
             // StartBtn
             // 
@@ -73,18 +75,21 @@
             this.StopBtn.Text = "Stop";
             this.StopBtn.UseVisualStyleBackColor = true;
             // 
+            // spectrumPlot
+            // 
+            this.spectrumPlot.Location = new System.Drawing.Point(11, 47);
+            this.spectrumPlot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.spectrumPlot.Name = "spectrumPlot";
+            this.spectrumPlot.Size = new System.Drawing.Size(850, 402);
+            this.spectrumPlot.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
-
-            //
-            //Plot
-            //
-            this.spectrumPlot.Location = new System.Drawing.Point(12, 12);
-            this.spectrumPlot.Name = "scottPlotUC1";
-            this.spectrumPlot.Size = new System.Drawing.Size(1108, 402);
-            this.spectrumPlot.TabIndex = 4;
-
-            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 458);
@@ -92,6 +97,7 @@
             this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.FooterLabel);
             this.Controls.Add(this.TitleLabel);
+            this.Controls.Add(this.spectrumPlot);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
